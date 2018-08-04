@@ -401,7 +401,7 @@ class AzureAdapter extends AbstractAdapter
      */
     protected function getOptionsFromConfig(Config $config)
     {
-        $options = new CreateBlockBlobOptions();
+        $options = new CreateBlockBlobOptions(); //updated
 
         foreach (static::$metaOptions as $option) {
             if (!$config->has($option)) {
