@@ -16,12 +16,12 @@ composer require feilongcui/laravel-azure-storage
 Then add this to the `disks` section of `config/filesystems.php`:
 
 ```php
-        'azure' => [
-            'driver'    => 'azure',
-            'name'      => env('AZURE_ACCOUNT_NAME'),
-            'key'       => env('AZURE_ACCOUNT_KEY'),
-            'container' => env('AZURE_CONTAINER_NAME'),
-        ],
+    'azure' => [
+        'driver'    => 'azure',
+        'name'      => env('AZURE_ACCOUNT_NAME'),
+        'key'       => env('AZURE_ACCOUNT_KEY'),
+        'container' => env('AZURE_CONTAINER_NAME'),
+    ],
 ```
 
 Finally, add the fields `AZURE_ACCOUNT_NAME`, `AZURE_ACCOUNT_KEY` and `AZURE_CONTAINER_NAME` to your `.env` file with the appropriate credentials. Then you can set the `azure` driver as either your default or cloud driver and use it to fetch and retrieve files as usual.
