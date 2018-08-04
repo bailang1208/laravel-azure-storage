@@ -1,6 +1,6 @@
 <?php
 
-namespace FeiLongCui\Flysystem\Azure;
+namespace FeiLongCui\LaravelAzureStorage;
 
 /**
  * @deprecated deprecated since version 1.0.1

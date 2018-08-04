@@ -1,6 +1,6 @@
 <?php
 
-namespace FeiLongCui\Flysystem\Azure;
+namespace FeiLongCui\LaravelAzureStorage;
 
 use League\Flysystem\Adapter\AbstractAdapter;
 use League\Flysystem\Adapter\Polyfill\NotSupportingVisibilityTrait;
