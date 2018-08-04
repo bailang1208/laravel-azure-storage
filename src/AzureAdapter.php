@@ -1,6 +1,6 @@
 <?php
 
-namespace League\Flysystem\Azure;
+namespace FeiLongCui\Flysystem\Azure;
 
 use League\Flysystem\Adapter\AbstractAdapter;
 use League\Flysystem\Adapter\Polyfill\NotSupportingVisibilityTrait;

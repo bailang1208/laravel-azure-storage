@@ -5,7 +5,7 @@ namespace FeiLongCui\LaravelAzureStorage;
 use Storage;
 use League\Flysystem\Filesystem;
 use Illuminate\Support\ServiceProvider;
-use League\Flysystem\Azure\AzureAdapter;
+use FeiLongCui\Flysystem\Azure\AzureAdapter;
 use MicrosoftAzure\Storage\Blob\BlobRestProxy;
 
 /**

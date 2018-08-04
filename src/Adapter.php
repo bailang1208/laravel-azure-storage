@@ -1,6 +1,6 @@
 <?php
 
-namespace League\Flysystem\Azure;
+namespace FeiLongCui\Flysystem\Azure;
 
 /**
  * @deprecated deprecated since version 1.0.1
