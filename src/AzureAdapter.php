@@ -11,9 +11,12 @@ use MicrosoftAzure\Storage\Blob\Models\BlobPrefix;
 use MicrosoftAzure\Storage\Blob\Models\BlobProperties;
 use MicrosoftAzure\Storage\Blob\Models\CopyBlobResult;
 use MicrosoftAzure\Storage\Blob\Models\CreateBlobOptions;
+use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
 use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
 use MicrosoftAzure\Storage\Blob\Models\ListBlobsResult;
+use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 use MicrosoftAzure\Storage\Common\Exceptions\ServiceException;
+
 
 class AzureAdapter extends AbstractAdapter
 {
@@ -51,6 +54,30 @@ class AzureAdapter extends AbstractAdapter
         $this->client = $azureClient;
         $this->container = $container;
         $this->setPathPrefix($prefix);
+
+        $this->checkContainer();
+    }
+
+    public function checkContainer() {
+        $container = $this->client->getContainerProperties($this->container);
+
+        if(!$container) {
+            $createContainerOptions = new CreateContainerOptions();
+            $createContainerOptions->setPublicAccess(PublicAccessType::CONTAINER_AND_BLOBS);
+
+            try {
+                // Create container.
+                $this->client->createContainer($this->container, $createContainerOptions);
+            }
+            catch(ServiceException $e){
+                // Handle exception based on error codes and messages.
+                // Error codes and messages are here:
+                // http://msdn.microsoft.com/library/azure/dd179439.aspx
+                $code = $e->getCode();
+                $error_message = $e->getMessage();
+                echo $code.": ".$error_message."<br />";
+            }
+        }
     }
 
     /**
