@@ -2,6 +2,9 @@
 
 Microsoft Azure Blob Storage integration for Laravel's Storage API
 
+# Requirements
+- Laravel 5.6
+
 # Installation
 
 Install the package using composer:
