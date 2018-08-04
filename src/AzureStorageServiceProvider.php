@@ -1,6 +1,6 @@
 <?php
 
-namespace Matthewbdaly\LaravelAzureStorage;
+namespace FeiLongCui\LaravelAzureStorage;
 
 use Storage;
 use League\Flysystem\Filesystem;
